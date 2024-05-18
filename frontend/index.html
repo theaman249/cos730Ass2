@@ -21,13 +21,20 @@
         </div>
 
         <div>
-            <span style="margin-right: 108px;">
+            <span class="inline-block" style="margin-right: 108px;">
                 <label for="inNumResults">Result count:</label>
-                <input type="number" id="inNumResults" name="inNumResults" max="100" placeholder="25" style="width: 50px;" value="25">
-            </span>
+                <input type="number" id="inNumResults" name="inNumResults" max="100" placeholder="25" style="width: 50px;" value="25"><br><br>
 
-            <span>
-                <button class="button-styling-1" style="background-color: green;" onclick="getETFData()">ETF Data</button>
+                <input type="checkbox" id="chbSortAlphabetically" name="chbSortAlphabetically">
+                <label for="vehicle1"> Sort Alphabetically</label><br><br>
+    
+                <label for="inETFticker">ETF ticker:</label>
+                <input type="text" id="inETFticker" name="inETFticker" max="100" placeholder="SPY" style="width: 65px;" value="">                
+            </span>
+    
+            <span class="inline-block">
+                <button class="button-styling-1" onclick="getETFData()" style="background-color: orange;">ETF Data</button><br>
+                <button class="button-styling-1" onclick="getESGData()" style="background-color: green;">ESG Data</button>
             </span>
         </div>
 

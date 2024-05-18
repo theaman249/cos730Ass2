@@ -16,3 +16,8 @@
     cursor: pointer;
     border-radius: 8px;
 }
+
+.inline-block {
+    display: inline-block;
+    vertical-align: top; /* Adjust if needed */
+}

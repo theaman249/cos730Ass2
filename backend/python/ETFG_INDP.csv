@@ -1,12 +1,12 @@
 ticker,issuer,name
 AAA,AXS Investments,AXS First Priority CLO Bond ETF
-AAACX,,Alpha Alternative Assets Fund - I
+AAACX,Alpha Alternative,Alpha Alternative Assets Fund - I
 AAAU,Goldman Sachs,Goldman Sachs Physical Gold ETF
-AACAX,,Alpha Alternative Assets Fund - A
+AACAX,Alpha Alternative,Alpha Alternative Assets Fund - A
 AADR,AdvisorShares,AdvisorShares Dorsey Wright ADR ETF
-AAIAX,,Axonic Alternative Income Interval Fund - A
+AAIAX,Axonic Alternative,Axonic Alternative Income Interval Fund - A
 AAIT,Blackrock,iShares MSCI All Country Asia Information Technology
-AAJAX,,Alpha Alternative Assets Fund - A
+AAJAX,Alpha Alternative,Alpha Alternative Assets Fund - A
 AAPB,GraniteShares,GraniteShares 2x Long AAPL Daily ETF
 AAPD,Direxion,Direxion Daily AAPL Bear 1X Shares
 AAPR,Innovator Capital Management,Innovator Equity Defined Protection ETF - 2 Yr to April 2026
@@ -47,7 +47,7 @@ AESR,Regents Park Funds,Anfield U.S. Equity Sector Rotation ETF
 AETH,Bitwise Asset Management,Bitwise Ethereum Strategy ETF
 AFIF,Regents Park Funds,Anfield Universal Fixed Income ETF
 AFK,Van Eck,VanEck Africa Index ETF
-AFKCRRD,,VanEck Vectors Africa Index
+AFKCRRD,VanEck Vectors,VanEck Vectors Africa Index
 AFLG,First Trust,First Trust Active Factor Large Cap ETF
 AFMC,First Trust,First Trust Active Factor Mid Cap ETF
 AFSM,First Trust,First Trust Active Factor Small Cap ETF
@@ -55,13 +55,13 @@ AFTY,Pacer Financial,Pacer CSOP FTSE China A50 ETF
 AGA,DBX Strategic Advisors,DB Agriculture Double Short ETN
 AGF,DWS,DB Agriculture Long ETN
 AGG,iShares,iShares Core U.S. Aggregate Bond ETF
-AGGE,,IQ Enhanced Core Bond U.S. ETF
+AGGE,IQ Enhanced,IQ Enhanced Core Bond U.S. ETF
 AGGH,Simplify Asset Management,Simplify Aggregate Bond PLUS Credit Hedge ETF
 AGGP,IndexIQ,IQ Enhanced Core Plus Bond U.S. ETF
 AGGY,WisdomTree,WisdomTree Yield Enhanced U.S. Aggregate Bond Fund
 AGIH,iShares,iShares Inflation Hedged U.S. Aggregate Bond ETF
 AGLS,AdvisorShares,AdvisorShares Accuvest Global Long Short
-AGND,,WT NEG DUR US AGG BOND FUND
+AGND,WT NEG DUR,WT NEG DUR US AGG BOND FUND
 AGNG,Global X,Global X Aging Population ETF
 AGOL,ETF Securities,ETFS Physical Asian Gold
 AGOV,Exchange Traded Concepts,ETC Gavekal Asia Pacific Government Bond ETF
@@ -91,9 +91,9 @@ AIVL,WisdomTree,WisdomTree U.S. AI Enhanced Value Fund
 AIYY,Elevate Shares,YieldMax AI Option Income Strategy ETF
 AJAN,Innovator Capital Management,Innovator Equity Defined Protection ETF  2 Yr to January 2026
 AK,,VanEck Vectors Oil Refiners ETF
-ALABX,,ALPS | Smith Balanced Opportunity Fund - A
+ALABX,ALPS,ALPS | Smith Balanced Opportunity Fund - A
 ALAI,Fred Alger Management,Alger AI Enablers & Adopters ETF
-ALCBX,,ALPS | Smith Balanced Opportunity Fund - C
+ALCBX,ALPS,ALPS | Smith Balanced Opportunity Fund - C
 ALD,,WT ASIA LOCAL DEBT FUND
 ALFA,Exchange Traded Concepts,AlphaClone Alternative Alpha ETF
 ALFI,,AlphaClone International ETF
@@ -175,7 +175,7 @@ ARKX,ARK,ARK Space Exploration & Innovation ETF
 ARKY,ARK,ARK 21Shares Active Bitcoin Ethereum Strategy ETF
 ARKZ,ARK,ARK 21Shares Active Ethereum Futures Strategy ETF
 ARLU,Allianz Investment Management,AllianzIM U.S. Equity Buffer15 Uncapped Apr ETF
-ARMR,,ARMOR US EQUITY INDEX ETF
+ARMR,ARMOR,ARMOR US EQUITY INDEX ETF
 ARP,PMV Capital Advisers,PMV Adaptive Risk Parity ETF
 ARVR,First Trust,First Trust Indxx Metaverse ETF
 ASEA,Global X,Global X Southeast Asia ETF
@@ -193,12 +193,9 @@ AUGT,Allianz Investment Management,AllianzIM U.S. Large Cap Buffer10 Aug ETF
 AUGW,Allianz Investment Management,AllianzIM U.S. Large Cap Buffer20 Aug ETF
 AUGZ,TrueMark Investments,TrueShares Structured Outcome (August) ETF
 AUMI,Themes,Themes Gold Miners ETF
-AUNZ,,
 AUSE,,WT AUSTRALIA DIVIDEND FUND
 AUSF,Global X,Global X Adaptive US Factor ETF
 AVDE,American Century Investments,Avantis International Equity ETF
-AVDG,,AVDR US LRG CAP ESG ETF
-AVDR,,AVDR US LRG CAP LEAD ETF
 AVDS,American Century Investments,Avantis International Small Cap Equity ETF
 AVDV,American Century Investments,Avantis International Small Cap Value ETF
 AVEE,American Century Investments,Avantis Emerging Markets Small Cap Equity ETF
@@ -245,7 +242,6 @@ AXSIX,,Axonic Strategic Income Fund
 AXSL,BlackRock,iShares MSCI ACWI ex-US Consumer Staples
 AXTE,BlackRock,iShares MSCI ACWI ex-US Telecommunication Services
 AXUT,BlackRock,iShares MSCI ACWI ex-US Utilities
-AYT,,None
 AZAA,Allianz Investment Management,AllianzIM U.S. Large Cap Buffer10 Apr ETF
 AZAJ,Allianz Investment Management,AllianzIM U.S. Large Cap Buffer10 Jan ETF
 AZAL,Allianz Investment Management,AllianzIM U.S. Large Cap Buffer10 Jul ETF
@@ -257,12 +253,10 @@ AZBO,Allianz Investment Management,AllianzIM U.S. Large Cap Buffer20 Oct ETF
 AZIA,Global X,Global X Central Asia and Mongolia ETF
 AZTD,Toroso Investments,Aztlan Global Stock Selection DM SMID ETF
 BAB,Invesco,Invesco Taxable Municipal Bond ETF
-BABS,,
 BABX,GraniteShares,GraniteShares 2x Long BABA Daily ETF
 BABZ,PIMCO,PIMCO Build America Bonds Strategy
 BAD,Thematic Investments,B.A.D. ETF
 BAL,Barclays Capital,iPath Series B Bloomberg Cotton Subindex Total Return ETN
-BALB,,None
 BALI,iShares,BlackRock Advantage Large Cap Income ETF
 BALT,Innovator Capital Management,Innovator Defined Wealth Shield ETF
 BAMA,Brookstone Asset Management,Brookstone Active ETF
@@ -362,7 +356,6 @@ BIGB,Roundhill Investments,Roundhill BIG Bank ETF
 BIGD,PureFunds,PureFunds ISE Big Data ETF
 BIGT,Roundhill Investments,Roundhill Big Tech ETF
 BIGY,Defiance ETFs,Defiance Next Gen Big Data ETF
-BIK,,
 BIKR,ETF Managers Group,Rogers AI Global Macro ETF
 BIL,SSgA,SPDR Bloomberg Barclays 1-3 Month T-Bill ETF
 BILD,Macquarie,Macquarie Global Listed Infrastructure ETF
@@ -373,7 +366,6 @@ BINV,Brandes Investment Partners,Brandes International ETF
 BIS,ProShares,ProShares UltraShort Nasdaq Biotechnology
 BITB,Bitwise Asset Management,Bitwise Bitcoin ETF
 BITC,Bitwise Asset Management,Bitwise Bitcoin Strategy Optimum Roll ETF
-BITE,,
 BITI,ProShares,ProShares Short Bitcoin Strategy ETF
 BITO,ProShares,ProShares Bitcoin Strategy ETF 
 BITQ,Exchange Traded Concepts,Bitwise Crypto Industry Innovators ETF
@@ -384,10 +376,8 @@ BIV,Vanguard,Vanguard Intermediate-Term Bond ETF
 BIZD,Van Eck,VanEck BDC Income ETF
 BIZDCRRD,,VanEck Vectors BDC Income ETF
 BJAN,Innovator Capital Management,Innovator U.S. Equity Buffer ETF - January
-BJJN,,None
 BJK,Van Eck,VanEck Gaming ETF
 BJKCRRD,,VanEck Vectors Gaming ETF
-BJO,,None
 BJUL,Innovator Capital Management,Innovator U.S. Equity Buffer ETF - July
 BJUN,Innovator Capital Management,Innovator U.S. Equity Buffer ETF - June
 BKAG,BNY Mellon Investment Management,BNY Mellon Core Bond ETF
@@ -396,12 +386,10 @@ BKCH,Global X,Global X Blockchain ETF
 BKCHLI,,Global X Blockchain UCITs ETF
 BKCI,BNY Mellon Investment Management,BNY Mellon Concentrated International ETF
 BKEM,BNY Mellon Investment Management,BNY Mellon Emerging Markets Equity ETF
-BKES,,None
 BKF,iShares,iShares MSCI BIC ETF
 BKGI,BNY Mellon Investment Management,BNY Mellon Global Infrastructure Income ETF
 BKHY,BNY Mellon Investment Management,BNY Mellon High Yield Beta ETF
 BKIE,BNY Mellon Investment Management,BNY Mellon International Equity ETF
-BKIS,,None
 BKIV,BNY Mellon Investment Management,BNY Mellon Innovators ETF
 BKLC,BNY Mellon Investment Management,BNY Mellon US Large Cap Core Equity ETF
 BKLN,Invesco,Invesco Senior Loan ETF
@@ -410,7 +398,6 @@ BKSB,BNY Mellon Investment Management,BNY Mellon Short Duration Corporate Bond E
 BKSE,BNY Mellon Investment Management,BNY Mellon US Small Cap Core Equity ETF
 BKT,,BlackRock Income Trust Inc
 BKUI,BNY Mellon Investment Management,BNY Mellon Ultra Short Income ETF
-BKUS,,None
 BKWO,BNY Mellon Investment Management,BNY Mellon Women's Opportunities ETF
 BLCN,SRN Advisors,Siren Nasdaq NexGen Economy ETF
 BLCR,iShares,BlackRock Large Cap Core ETF
@@ -541,7 +528,6 @@ BST,,Blackrock Science & Technology Trust
 BSTP,Innovator Capital Management,Innovator Buffer Step-Up Strategy ETF
 BSV,Vanguard,Vanguard Short-Term Bond ETF
 BSVO,Empowered Funds,EA Bridgeway Omni Small-Cap Value ETF
-BSWN,,None
 BTAL,AGF Investments,AGF U.S. Market Neutral Anti-Beta Fund
 BTC,,ClearShares Piton Intermediate Fixed Income ETF
 BTCO,Invesco,Invesco Galaxy Bitcoin ETF
@@ -588,7 +574,6 @@ BVAL,Exponential ETFs,Brand Value ETF
 BWEB,Bitwise Asset Management,Bitwise Web3 ETF
 BWET,ETF Managers Group,Breakwave Tanker Shipping ETF
 BWTG,Tuttle Capital Management,Brendan Wood TopGun ETF
-BWV,,None
 BWX,SSgA,SPDR Bloomberg Barclays International Treasury Bond ETF
 BWZ,SSgA,SPDR Bloomberg Barclays Short Term International Treasury Bond ETF
 BXMX,,Nuveen S&P 500 Buy-Write Income Fund
@@ -609,7 +594,6 @@ CADSX,,CION Ares Diversified Credit Fund - U-2
 CADUX,,CION Ares Diversified Credit Fund - I
 CADWX,,CION Ares Diversified Credit Fund - L
 CADZX,,CION Ares Diversified Credit Fund - U
-CAFE,,None
 CAFG,Pacer Financial,Pacer US Small Cap Cash Cows Growth Leaders ETF
 CALF,Pacer Financial,Pacer US Small Cap Cash Cows 100 ETF
 CALY,iShares,BlackRock Short-Term California Muni Bond ETF
@@ -621,7 +605,6 @@ CANQ,Calamos Advisors LLC,Calamos Alternative Nasdaq & Bond ETF
 CAOS,Alpha Architect,Alpha Architect Tail Risk ETF
 CAPD,Barclays Capital,iPath Shiller CAPE Index ETN
 CAPE,DoubleLine,Shiller CAPE U.S. Equities ETF
-CAPX,,
 CARD,Bank of Montreal,MAX Auto Industry -3x Inverse Leveraged ETN
 CARK,CastleArk,CastleArk Large Growth ETF
 CARU,Bank of Montreal,MAX Auto Industry 3x Leveraged ETN

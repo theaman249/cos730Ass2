@@ -3,7 +3,7 @@ import random
 import psycopg2
 import json
 
-print("in feature_etf")
+
 
 def hasDuplicates(my_list):
   return len(set(my_list)) != len(my_list)
@@ -69,7 +69,7 @@ portfolio = """[
   { "ticker": "XAU/USD", "name": "Gold Spot US Dollar", "price": 2414.70},
   { "ticker": "USD/ZAR", "name": "US Dollar South African Rand ", "price": 18.14}
 ]"""
-role = "Legal General"
+role = "senior analyst"
 
 cur.execute("INSERT INTO users VALUES(%s,%s,%s,%s,%s,%s,%s)",(id,fname,lname,email,company,json.dumps(portfolio),role))
 conn.commit()
@@ -78,6 +78,3 @@ cur.close()
 conn.close()
 
 print("INSERTING USER DATA - SUCCESS")
-
-
-
