@@ -22,9 +22,8 @@ const client = new Client({
       try {
         // Drop tables (if they exist) before reconnecting
         await client.query(`
-          DROP TABLE IF EXISTS students;
-          DROP TABLE IF EXISTS modules;
-          DROP TABLE IF EXISTS students_modules;
+          DROP TABLE IF EXISTS users;
+          DROP TABLE IF EXISTS etf;
         `);
       } catch (error) {
         console.error('Error dropping tables:', error);
@@ -57,7 +56,7 @@ const client = new Client({
     // Create tables with informative error handling
     try {
       await clientNew.query(`
-        CREATE TABLE IF NOT EXISTS students (
+        CREATE TABLE IF NOT EXISTS users (
           id VARCHAR(9) PRIMARY KEY,
           fname VARCHAR(100),
           lname VARCHAR(100),
@@ -81,7 +80,7 @@ const client = new Client({
     }
 
     // Verification query (optional)
-    const results = await clientNew.query('SELECT * FROM students');
+    const results = await clientNew.query('SELECT * FROM users');
 
     if (results) {
       console.log('Database and tables verified successfully.');
