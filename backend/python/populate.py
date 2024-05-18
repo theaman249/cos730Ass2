@@ -3,6 +3,7 @@ import random
 import psycopg2
 import json
 
+print("in feature_etf")
 
 def hasDuplicates(my_list):
   return len(set(my_list)) != len(my_list)
