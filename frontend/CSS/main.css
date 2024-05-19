@@ -16,3 +16,14 @@
     cursor: pointer;
     border-radius: 8px;
 }
+
+.inline-block {
+    display: inline-block;
+    vertical-align: top; /* Adjust if needed */
+}
+
+.div-borders{
+    border-style: solid;
+    border-color: green;
+    padding: 8px;
+}

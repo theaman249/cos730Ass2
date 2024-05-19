@@ -69,8 +69,23 @@ const client = new Client({
         CREATE TABLE IF NOT EXISTS etf(
             ticker VARCHAR(10) PRIMARY KEY,
             issuer VARCHAR(500),
-            name VARCHAR(500)
+            name VARCHAR(500),
+            risk VARCHAR(20),
+            volume float,
+            ytd_return float
         );
+
+        CREATE TABLE IF NOT EXISTS sentiment(
+          ticker VARCHAR(10) PRIMARY KEY,
+          name VARCHAR(500),
+          sentiment VARCHAR(10)
+        );
+
+        CREATE TABLE IF NOT EXISTS esg(
+          ticker VARCHAR(10) PRIMARY KEY,
+          name VARCHAR(500),
+          rating INT
+        )
       `);
 
       console.log('Tables created successfully.');

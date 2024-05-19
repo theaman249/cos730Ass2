@@ -6,35 +6,61 @@
     <link href="CSS/main.css" rel="stylesheet">
     <title>Home</title>
 </head>
-<body>
+<body onload="getData()">
     <div class="content-center">
 
         <h1 style="text-align: center; margin-bottom: 32px;">Legacy System API improvements</h1>
         
 
-        <div>
-            User information here
-        </div>
-    
-        <div style="margin-bottom: 24px;">
-            Holdings data comes here
+        <div id="studentDetails" style="margin-top: 24px; margin-bottom: 32px;">
+            <label style="font-weight: 700;">Account:</label> <label id="studentDetails_id">u12345678</label><br>
+            <label style="font-weight: 700;">Name:</label> <label id="studentDetails_name">John</label><br>
+            <label style="font-weight: 700;">Surname:</label> <label id="studentDetails_surname">Doe</label><br>
+            <label style="font-weight: 700;">Email:</label> <label id="studentDetails_email">john@mail.com</label><br>
+            <label style="font-weight: 700;">Company</label> <label id="studentDetails_company">2</label><br>
+            <label style="font-weight: 700;">Role:</label> <label id="studentDetails_role">student</label>
         </div>
 
-        <div>
-            <span style="margin-right: 108px;">
+        <h2>ETF Feature</h2>
+        <div class="div-borders" style="margin-bottom: 16px;">
+            <span class="inline-block" style="margin-right: 80px;">
                 <label for="inNumResults">Result count:</label>
-                <input type="number" id="inNumResults" name="inNumResults" max="100" placeholder="25" style="width: 50px;" value="25">
+                <input type="number" id="inNumResults" name="inNumResults" max="100" placeholder="25" style="width: 50px;" value="25"><br><br>
+
+                <input type="checkbox" id="chbSortAlphabetically" name="chbSortAlphabetically">
+                <label for="vehicle1"> Sort Alphabetically</label><br><br>
+    
+                <label for="inETFticker">ETF ticker:</label>
+                <input type="text" id="inETFticker" name="inETFticker" max="100" placeholder="SPY" style="width: 65px;" value="">                
             </span>
 
-            <span>
-                <button class="button-styling-1" style="background-color: green;" onclick="getETFData()">ETF Data</button>
+            <span class="inline-block" style="margin-right: 80px;">
+                <label for="inMinVolume">min volume:</label>
+                <input type="number" id="inMinVolume" name="inMinVolume" max="650000" min="100000" placeholder="150000" style="width: 100px;" value="100000"><br>
+            </span>
+
+            <span class="inline-block">
+                <input type="radio" id="all" name="risk" value="all">
+                <label for="all">ALL</label><br>
+                <input type="radio" id="low" name="risk" value="low">
+                <label for="low">LOW</label><br>
+                <input type="radio" id="moderate" name="risk" value="moderate">
+                <label for="moderate">MODERATE</label><br>
+                <input type="radio" id="high" name="risk" value="high">
+                <label for="high">HIGH</label>
             </span>
         </div>
 
         <div>
-            <h5>API out</h5>
-            <label id="lblLoading">fetching data...</label><br>
-            <textarea id="textAreaOut" rows="20" cols="80" readonly placeholder="Welcome!"></textarea>
+            <span class="inline-block">
+                <button class="button-styling-1" onclick="getETFData()" style="background-color: green;">ETF Data</button>
+                <button class="button-styling-1" onclick="getESGData()" style="background-color: green;">momentum</button>
+            </span>
+        </div>
+
+        <div>
+            <label id="lblLoading"></label><br>
+            <textarea id="textAreaOut" rows="20" cols="100" readonly placeholder="Welcome!"></textarea>
         </div>
     </div>
 
