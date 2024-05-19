@@ -210,8 +210,6 @@ function getESGData(){
 }
 
 
-
-
 function getETFData(){
     const resultCount = Number(document.getElementById("inNumResults").value);
     const id_sortAlphabetically = document.getElementById("chbSortAlphabetically");
@@ -235,8 +233,8 @@ function getETFData(){
     clearTextAreaOut();
 
 
-    if(resultCount>100){
-        alert("Invalid value for Result count MAX = 100 ");
+    if(resultCount>200){
+        alert("Invalid value for Result count MAX = 200");
         return;
     }
     else if(resultCount <= 0){
@@ -299,4 +297,98 @@ function getETFData(){
     };
 
     xhr.send(jsonString);
+}
+
+function getSentimentData(){
+    const id_sortAlphabetically = document.getElementById("chbSortAlphabetically_sentiment");
+    const id_textAreaOutSentiment = document.getElementById("textAreaOut_sentiment");
+    const id_chbHold = document.getElementById("chbHold");
+    const id_chbBuy = document.getElementById("chbBuy");
+    const id_chbSell = document.getElementById("chbSell");
+    const id_lblLoading = document.getElementById("lblLoading_sentiment")
+
+    const ticker = document.getElementById("inSentimentTicker").value;
+    const resultCount = Number(document.getElementById("inNumResults_sentiment").value);
+
+    let sentiments = [];
+    let alphabetical = false;
+
+    if(id_chbBuy.checked){
+        sentiments.push('buy');
+    }
+
+    if(id_chbHold.checked){
+        sentiments.push('hold');
+    }
+
+    if(id_chbSell.checked){
+        sentiments.push('sell');
+    }
+
+    if(id_sortAlphabetically.checked)
+        alphabetical = true;
+    else 
+        alphabetical = false;
+
+    id_textAreaOutSentiment.innerHTML = "";
+
+    id_lblLoading.style.color = 'green';
+    id_lblLoading.innerHTML = "Fetching Data.....";
+
+    if(resultCount>150){
+        alert("Invalid value for Result count MAX = 150 ");
+        return;
+    }
+    else if(resultCount <= 0){
+        alert("Invalid value for Result count > 0 ");
+        return;
+    }
+
+    const jsonObj = {
+        result_count: resultCount,
+        alphabetical:alphabetical,
+        ticker:ticker,
+        sentiments:sentiments
+    }
+
+    const jsonString = JSON.stringify(jsonObj)
+
+    //console.log(jsonString);
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "http://localhost:4000/getSentimentData");
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            //console.log(xhr.status);
+            //console.log(xhr.responseText);
+
+            if (xhr.status === 200) {
+
+                id_lblLoading.innerHTML = "";
+
+                const jsonResponse = JSON.parse(xhr.responseText);
+                
+                const data = jsonResponse.data;
+
+                for(let i=0; i<data.length; ++i)
+                {
+                    id_textAreaOutSentiment.innerHTML += `{ticker: ${data[i].ticker}, name: ${data[i].name}, sentiment: ${data[i].sentiment}}\n`;
+                }
+            }
+            else if(xhr.status === 401)
+            {
+                const jsonResponse = JSON.parse(xhr.responseText);
+
+                alert(jsonResponse);
+            }
+
+        }
+    };
+
+    xhr.send(jsonString);
+
 }
