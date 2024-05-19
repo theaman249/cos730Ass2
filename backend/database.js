@@ -89,6 +89,12 @@ const client = new Client({
         )
       `);
 
+       /**
+        * SELECT ticker, name, rating, agency
+          FROM esg
+          WHERE agency IN ('s&p', 'dow jones');
+        */
+
       console.log('Tables created successfully.');
     } catch (error) {
       console.error('Error creating tables:', error);

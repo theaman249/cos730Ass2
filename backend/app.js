@@ -99,7 +99,7 @@ app.post('/getMomentumETFs', (req, res) =>{
 })
 
 app.post('/getESGData', (req,res) =>{
-  const {result_count,alphabetical,ticker,agency,rating} = req.body
+  const {result_count,alphabetical,ticker,agencies,rating} = req.body
 
   let min = 0; //default is a poor ratings
   let max = 39;
@@ -108,11 +108,11 @@ app.post('/getESGData', (req,res) =>{
     min = 80;
     max = 100;
   }
-  else if(rating === "good"){
+  else if(rating === "orange"){
     min = 60;
     max = 79;
   }
-  else if(rating === "average"){
+  else if(rating === "yellow"){
     min = 40;
     max = 59;
   }
@@ -125,19 +125,70 @@ app.post('/getESGData', (req,res) =>{
     getESGDataQuery = `SELECT * from esg WHERE ticker = '${ticker}'`;
   }
   else if(alphabetical){ //user wants in alphabetical order
-    getESGDataQuery = `SELECT * from esg ORDER BY name ASC LIMIT ${result_count}`;
-
-    if(rating != "all"){
-      getESGDataQuery = `SELECT * from esg WHERE rating>= ${min} AND rating <=${max} ORDER BY name ASC LIMIT ${result_count}`;
+    
+    if(rating === "all")
+    {
+      if(agencies.length === 1){ //the most inefficient way to do this; Not proud :
+        getESGDataQuery = `SELECT * from esg WHERE agency IN ('${agencies[0]}') ORDER BY name ASC LIMIT ${result_count}`;
+      } 
+      else if(agencies.length === 2){
+        getESGDataQuery = `SELECT * from esg WHERE agency IN ('${agencies[0]}','${agencies[1]}') ORDER BY name ASC LIMIT ${result_count}`;
+      }
+      else if(agencies.length === 3){
+        getESGDataQuery = `SELECT * from esg WHERE agency IN ('${agencies[0]}','${agencies[1]}','${agencies[2]}') ORDER BY name ASC LIMIT ${result_count}`;
+      }
+      else{
+        getESGDataQuery = `SELECT * from esg ORDER BY name ASC LIMIT ${result_count}`;
+      }
+    }
+    else
+    {
+      if(agencies.length == 1){
+        getESGDataQuery = `SELECT * from esg WHERE agency IN ('${agencies[0]}') AND rating>= ${min} AND rating <=${max} ORDER BY name ASC LIMIT ${result_count}`;
+      } 
+      else if(agencies.length === 2){
+        getESGDataQuery = `SELECT * from esg WHERE agency IN ('${agencies[0]}','${agencies[1]}') AND rating>= ${min} AND rating <=${max} ORDER BY name ASC LIMIT ${result_count}`;
+      }
+      else if(agencies.length === 3){
+        getESGDataQuery = `SELECT * from esg WHERE agency IN ('${agencies[0]}','${agencies[1]}','${agencies[2]}') AND rating>= ${min} AND rating <=${max} ORDER BY name ASC LIMIT ${result_count}`;
+      }
+      else
+        getESGDataQuery = `SELECT * from esg WHERE rating>= ${min} AND rating <=${max} ORDER BY name ASC LIMIT ${result_count}`;
     }
   }
   else{
-    getESGDataQuery = `SELECT * from esg LIMIT ${result_count}`;
-
-    if(rating != "all"){
-      getESGDataQuery = `SELECT * from esg WHERE rating >= ${min} AND rating <= ${max} LIMIT ${result_count}`;
-    }
+    if(rating === "all")
+      {
+        if(agencies.length === 1){ //the most inefficient way to do this; Not proud :
+          getESGDataQuery = `SELECT * from esg WHERE agency IN ('${agencies[0]}') LIMIT ${result_count}`;
+        } 
+        else if(agencies.length === 2){
+          getESGDataQuery = `SELECT * from esg WHERE agency IN ('${agencies[0]}','${agencies[1]}') LIMIT ${result_count}`;
+        }
+        else if(agencies.length === 3){
+          getESGDataQuery = `SELECT * from esg WHERE agency IN ('${agencies[0]}','${agencies[1]}','${agencies[2]}') LIMIT ${result_count}`;
+        }
+        else{
+          getESGDataQuery = `SELECT * from esg LIMIT ${result_count}`;
+        }
+      }
+      else
+      {
+        if(agencies.length == 1){
+          getESGDataQuery = `SELECT * from esg WHERE agency IN ('${agencies[0]}') AND rating>= ${min} AND rating <=${max} LIMIT ${result_count}`;
+        } 
+        else if(agencies.length === 2){
+          getESGDataQuery = `SELECT * from esg WHERE agency IN ('${agencies[0]}','${agencies[1]}') AND rating>= ${min} AND rating <=${max} LIMIT ${result_count}`;
+        }
+        else if(agencies.length === 3){
+          getESGDataQuery = `SELECT * from esg WHERE agency IN ('${agencies[0]}','${agencies[1]}','${agencies[2]}') AND rating>= ${min} AND rating <=${max} LIMIT ${result_count}`;
+        }
+        else
+          getESGDataQuery = `SELECT * from esg WHERE rating>= ${min} AND rating <=${max} LIMIT ${result_count}`;
+      }
   }
+
+  console.log(getESGDataQuery);
 
   client.query(getESGDataQuery, (err,result) =>{
     if(err){

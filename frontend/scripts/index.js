@@ -106,7 +106,6 @@ function getMomentumETFs(){
 
 
 
-
 function getETFData(){
     const resultCount = Number(document.getElementById("inNumResults").value);
     const id_sortAlphabetically = document.getElementById("chbSortAlphabetically");
