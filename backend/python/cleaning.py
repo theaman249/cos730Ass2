@@ -1,7 +1,7 @@
 import csv
 
 # Input and output file names
-input_file = 'esg.csv'
+input_file = 'sentiment.csv'
 output_file = 'cleaned.csv'
 
 # Read the CSV data
@@ -21,7 +21,7 @@ for row in rows:
 
 # Write the unique rows to the new CSV file
 with open(output_file, 'w', newline='') as outfile:
-    fieldnames = ['ticker', 'name', 'rating']
+    fieldnames = ['ticker', 'name', 'sentiment']
     writer = csv.DictWriter(outfile, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(unique_rows)
