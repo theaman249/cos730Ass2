@@ -221,6 +221,73 @@ app.post('/getESGData', (req,res) =>{
 
 })
 
+app.post('/getSentimentData', (req,res) =>{
+  const {result_count, alphabetical,sentiments,ticker} = req.body;
+
+  let getSentimentDataQuery = "";
+
+  if (ticker && ticker !== "") {
+    getSentimentDataQuery = `SELECT * from esg WHERE ticker = '${ticker}'`;
+  }
+  else if(alphabetical){
+    if(sentiments.length === 1){ //the most inefficient way to do this; Not proud :
+      getSentimentDataQuery = `SELECT * from sentiment WHERE sentiment IN ('${sentiments[0]}') ORDER BY name ASC LIMIT ${result_count}`;
+    } 
+    else if(sentiments.length === 2){
+      getSentimentDataQuery = `SELECT * from sentiment WHERE sentiment IN ('${sentiments[0]}','${sentiments[1]}') ORDER BY name ASC LIMIT ${result_count}`;
+    }
+    else if(sentiments.length === 3){
+      getSentimentDataQuery = `SELECT * from sentiment WHERE sentiment IN ('${sentiments[0]}','${sentiments[1]}','${sentiments[2]}') ORDER BY name ASC LIMIT ${result_count}`;
+    }
+    else{
+      getSentimentDataQuery = `SELECT * from sentiment ORDER BY name ASC LIMIT ${result_count}`;
+    }
+  }
+  else
+  {
+    if(sentiments.length === 1){ //the most inefficient way to do this; Not proud :
+      getSentimentDataQuery = `SELECT * from sentiment WHERE sentiment IN ('${sentiments[0]}') LIMIT ${result_count}`;
+    } 
+    else if(sentiments.length === 2){
+      getSentimentDataQuery = `SELECT * from sentiment WHERE sentiment IN ('${sentiments[0]}','${sentiments[1]}') LIMIT ${result_count}`;
+    }
+    else if(sentiments.length === 3){
+      getSentimentDataQuery = `SELECT * from sentiment WHERE sentiment IN ('${sentiments[0]}','${sentiments[1]}','${sentiments[2]}') LIMIT ${result_count}`;
+    }
+    else{
+      getSentimentDataQuery = `SELECT * from sentiment LIMIT ${result_count}`;
+    }
+  }
+
+  client.query(getSentimentDataQuery, (err, result) =>{
+    if(err){
+      res.status(500).send({
+        message: "query fetch request error",
+        error: err
+      })
+    }
+    else{
+      let arr_return = [];
+
+      for(let i=0; i<result.rows.length;++i){
+
+        let obj = {
+          ticker: result.rows[i].ticker,
+          name: result.rows[i].name,
+          sentiment: result.rows[i].sentiment
+        }
+
+        arr_return.push(obj);
+      }
+
+      res.status(200).send({
+        data: arr_return
+      })
+    }
+  })
+
+});
+
 
 app.post('/getETFData', (req, res) =>{
 
