@@ -101,8 +101,10 @@ function getMomentumETFs(){
     };
 
     xhr.send(jsonString);
-
 }
+
+
+
 
 
 function getETFData(){
@@ -119,7 +121,6 @@ function getETFData(){
         if (riskElement[i].checked)
             risk = riskElement[i].value;
     }
-
 
     let alphabetical = false;
     id_lblLoading.style.color = 'green';

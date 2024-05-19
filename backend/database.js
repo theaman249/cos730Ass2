@@ -84,7 +84,8 @@ const client = new Client({
         CREATE TABLE IF NOT EXISTS esg(
           ticker VARCHAR(10) PRIMARY KEY,
           name VARCHAR(500),
-          rating INT
+          rating INT,
+          agency VARCHAR(15)
         )
       `);
 

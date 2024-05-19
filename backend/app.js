@@ -98,6 +98,78 @@ app.post('/getMomentumETFs', (req, res) =>{
 
 })
 
+app.post('/getESGData', (req,res) =>{
+  const {result_count,alphabetical,ticker,agency,rating} = req.body
+
+  let min = 0; //default is a poor ratings
+  let max = 39;
+
+  if(rating === "green"){
+    min = 80;
+    max = 100;
+  }
+  else if(rating === "good"){
+    min = 60;
+    max = 79;
+  }
+  else if(rating === "average"){
+    min = 40;
+    max = 59;
+  }
+
+  let getESGDataQuery = "";
+
+  //console.log(req.body);
+
+  if (ticker && ticker !== "") {
+    getESGDataQuery = `SELECT * from esg WHERE ticker = '${ticker}'`;
+  }
+  else if(alphabetical){ //user wants in alphabetical order
+    getESGDataQuery = `SELECT * from esg ORDER BY name ASC LIMIT ${result_count}`;
+
+    if(rating != "all"){
+      getESGDataQuery = `SELECT * from esg WHERE rating>= ${min} AND rating <=${max} ORDER BY name ASC LIMIT ${result_count}`;
+    }
+  }
+  else{
+    getESGDataQuery = `SELECT * from esg LIMIT ${result_count}`;
+
+    if(rating != "all"){
+      getESGDataQuery = `SELECT * from esg WHERE rating >= ${min} AND rating <= ${max} LIMIT ${result_count}`;
+    }
+  }
+
+  client.query(getESGDataQuery, (err,result) =>{
+    if(err){
+      res.status(500).send({
+        message: "query fetch request error",
+        error: err
+      })
+    }
+    else{
+      let arr_return = [];
+
+      for(let i=0; i<result.rows.length;++i){
+
+        let obj = {
+          ticker: result.rows[i].ticker,
+          name: result.rows[i].name,
+          rating: result.rows[i].rating,
+          agency: result.rows[i].agency
+        }
+
+        arr_return.push(obj);
+      }
+
+      res.status(200).send({
+        data: arr_return
+      })
+    }
+  })
+
+
+})
+
 
 app.post('/getETFData', (req, res) =>{
 
@@ -105,7 +177,7 @@ app.post('/getETFData', (req, res) =>{
 
   let getAllETFsQuery = "";
 
-  console.log(req.body);
+  //console.log(req.body);
 
   if (ticker && ticker !== "") {
     getAllETFsQuery = `SELECT * from etf WHERE ticker = '${ticker}'`;
