@@ -188,7 +188,7 @@ app.post('/getESGData', (req,res) =>{
       }
   }
 
-  console.log(getESGDataQuery);
+  //console.log(getESGDataQuery);
 
   client.query(getESGDataQuery, (err,result) =>{
     if(err){

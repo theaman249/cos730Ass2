@@ -104,6 +104,112 @@ function getMomentumETFs(){
 }
 
 
+function getESGData(){
+    const id_sortAlphabetically = document.getElementById("chbSortAlphabetically_esg");
+    const id_textAreaOutESG = document.getElementById("textAreaOut_esg");
+    const id_chbDowJones = document.getElementById("chbDowJones");
+    const id_chbMSCI = document.getElementById("chbMSCI");
+    const id_chbSPG = document.getElementById("chbSPG");
+    const id_lblLoading = document.getElementById("lblLoading_esg")
+
+    const ticker = document.getElementById("inESGticker").value;
+    const resultCount = Number(document.getElementById("inNumResults_esg").value);
+
+    let agencies = [];
+    let rating = "all"; //default
+    let alphabetical = false;
+
+    var ratingsElement = document.getElementsByName('esgRating');
+    for (i = 0; i < ratingsElement.length; i++) {
+        if (ratingsElement[i].checked)
+            rating = ratingsElement[i].value;
+    }
+
+    if(id_chbDowJones.checked){
+        agencies.push('dow jones');
+    }
+    
+    if(id_chbMSCI.checked){
+        agencies.push('msci');
+    }
+
+    if(id_chbSPG.checked){
+        agencies.push('s&p');
+    }
+
+    if(id_sortAlphabetically.checked)
+        alphabetical = true;
+    else 
+        alphabetical = false;
+
+    id_lblLoading.style.color = 'green';
+    id_lblLoading.innerHTML = "Fetching Data....."
+
+    //clearTextArea
+    id_textAreaOutESG.innerHTML = "";
+
+    if(resultCount>100){
+        alert("Invalid value for Result count MAX = 100 ");
+        return;
+    }
+    else if(resultCount <= 0){
+        alert("Invalid value for Result count > 0 ");
+        return;
+    }
+
+    const jsonObj = {
+        result_count: resultCount,
+        alphabetical:alphabetical,
+        ticker:ticker,
+        rating: rating,
+        agencies: agencies
+    }
+
+    const jsonString = JSON.stringify(jsonObj)
+
+    //console.log(jsonString);
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "http://localhost:4000/getESGData");
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            //console.log(xhr.status);
+            //console.log(xhr.responseText);
+
+            if (xhr.status === 200) {
+
+                id_lblLoading.innerHTML = "";
+
+                const jsonResponse = JSON.parse(xhr.responseText);
+                
+                const data = jsonResponse.data;
+
+                // console.log(data.length);
+                // console.log(data[0]);
+
+                for(let i=0; i<data.length; ++i)
+                {
+                    id_textAreaOutESG.innerHTML += `{ticker: ${data[i].ticker}, name: ${data[i].name}, rating: ${data[i].rating}, agency: ${data[i].agency}}\n`;
+                }
+            }
+            else if(xhr.status === 401)
+            {
+                const jsonResponse = JSON.parse(xhr.responseText);
+
+                alert(jsonResponse);
+            }
+
+        }
+    };
+
+    xhr.send(jsonString);
+}
+
+
 
 
 function getETFData(){
