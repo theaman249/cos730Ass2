@@ -53,6 +53,57 @@ function getData(){
     xhr.send();
 }
 
+function getMomentumETFs(){
+    const resultCount = Number(document.getElementById("inNumResults").value);
+
+    const jsonObj = {
+        result_count:resultCount
+    }
+
+    const jsonString = JSON.stringify(jsonObj)
+
+    clearTextAreaOut();
+
+    //console.log(jsonString);
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "http://localhost:4000/getMomentumETFs");
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            //console.log(xhr.status);
+            //console.log(xhr.responseText);
+
+            if (xhr.status === 200) {
+
+                id_lblLoading.innerHTML = "";
+
+                const jsonResponse = JSON.parse(xhr.responseText);
+                
+                const data = jsonResponse.data;
+
+                for(let i=0; i<data.length; ++i)
+                {
+                    id_textAreaOut.innerHTML += `{ticker: ${data[i].ticker}, issuer: ${data[i].issuer}, name: ${data[i].name}, volume: ${data[i].volume}, risk: ${data[i].risk}, YTD: ${data[i].ytd_return}}\n`;
+                }
+            }
+            else if(xhr.status === 401)
+            {
+                const jsonResponse = JSON.parse(xhr.responseText);
+
+                alert(jsonResponse);
+            }
+
+        }
+    };
+
+    xhr.send(jsonString);
+
+}
+
 
 function getETFData(){
     const resultCount = Number(document.getElementById("inNumResults").value);
