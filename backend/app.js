@@ -48,6 +48,56 @@ app.get('/getUserData', (req,res) =>{
   })
 });
 
+/**
+ * Returns all ETFs who's volume is above avergae
+*/
+
+app.post('/getMomentumETFs', (req, res) =>{
+
+  const {result_count} = req.body;
+
+  myQuery = `
+    SELECT ticker, issuer, name, risk, volume, ytd_return
+    FROM etf
+    WHERE volume > (
+      SELECT AVG(volume) FROM etf
+    )
+    LIMIT ${result_count};
+  `
+
+  client.query(myQuery, (err, result) =>{
+    if(err){
+      res.status(500).send({
+        message: "query fetch request error",
+        error: err
+      })
+    }
+    else{
+      let arr_return = [];
+
+      for(let i=0; i<result.rows.length;++i){
+
+        let obj = {
+          ticker: result.rows[i].ticker,
+          issuer: result.rows[i].issuer,
+          name: result.rows[i].name,
+          risk: result.rows[i].risk,
+          volume: result.rows[i].volume,
+          ytd_return: result.rows[i].ytd_return
+
+        }
+
+        arr_return.push(obj);
+      }
+
+      res.status(200).send({
+        data: arr_return
+      })
+    }
+  })
+
+})
+
 
 app.post('/getETFData', (req, res) =>{
 
