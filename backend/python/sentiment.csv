@@ -1,0 +1,162 @@
+ticker,name,sentiment
+AAPL,Apple Inc.,buy
+MSFT,Microsoft Corp.,sell
+AMZN,Amazon.com Inc.,hold
+GOOGL,Alphabet Inc. (Class A),buy
+GOOG,Alphabet Inc. (Class C),sell
+FB,Meta Platforms Inc.,hold
+TSLA,Tesla Inc.,buy
+BRK.B,Berkshire Hathaway Inc. (Class B),hold
+JNJ,Johnson & Johnson,hold
+V,Visa Inc.,buy
+PG,Procter & Gamble Co.,sell
+NVDA,NVIDIA Corp.,hold
+DIS,Walt Disney Co.,sell
+MA,Mastercard Inc.,buy
+HD,Home Depot Inc.,hold
+PYPL,PayPal Holdings Inc.,sell
+ADBE,Adobe Inc.,buy
+NFLX,Netflix Inc.,hold
+CMCSA,Comcast Corp.,buy
+XOM,Exxon Mobil Corp.,hold
+PFE,Pfizer Inc.,hold
+KO,Coca-Cola Co.,buy
+PEP,PepsiCo Inc.,sell
+CSCO,Cisco Systems Inc.,hold
+ABT,Abbott Laboratories,buy
+NKE,Nike Inc.,sell
+MRK,Merck & Co. Inc.,hold
+LLY,Eli Lilly and Co.,buy
+ABBV,AbbVie Inc.,sell
+CRM,Salesforce.com Inc.,hold
+T,AT&T Inc.,hold
+WMT,Walmart Inc.,sell
+ORCL,Oracle Corp.,hold
+INTC,Intel Corp.,buy
+MCD,McDonald's Corp.,sell
+DHR,Danaher Corp.,hold
+COST,Costco Wholesale Corp.,buy
+VZ,Verizon Communications Inc.,sell
+UNH,UnitedHealth Group Inc.,hold
+MDT,Medtronic PLC,buy
+WFC,Wells Fargo & Co.,sell
+BA,Boeing Co.,hold
+BMY,Bristol-Myers Squibb Co.,buy
+AMGN,Amgen Inc.,sell
+HON,Honeywell International Inc.,hold
+AVGO,Broadcom Inc.,buy
+TXN,Texas Instruments Inc.,sell
+LIN,Linde PLC,hold
+NEE,NextEra Energy Inc.,buy
+QCOM,Qualcomm Inc.,sell
+UPS,United Parcel Service Inc.,hold
+RTX,Raytheon Technologies Corp.,buy
+UNP,Union Pacific Corp.,sell
+LOW,Lowe's Companies Inc.,hold
+MS,Morgan Stanley,buy
+CVX,Chevron Corp.,sell
+PM,Philip Morris International Inc.,hold
+IBM,International Business Machines Corp.,buy
+TGT,Target Corp.,sell
+BKNG,Booking Holdings Inc.,hold
+CAT,Caterpillar Inc.,buy
+GS,Goldman Sachs Group Inc.,sell
+SCHW,Charles Schwab Corp.,hold
+DE,Deere & Co.,buy
+SPGI,S&P Global Inc.,sell
+BLK,BlackRock Inc.,hold
+GE,General Electric Co.,buy
+ISRG,Intuitive Surgical Inc.,sell
+F, Ford Motor Co.,hold
+MMM,3M Co.,buy
+ADI,Analog Devices Inc.,sell
+CL,Colgate-Palmolive Co.,hold
+ADSK,Autodesk Inc.,buy
+ZTS,Zoetis Inc.,sell
+GILD,Gilead Sciences Inc.,hold
+BK, Bank of New York Mellon Corp.,buy
+NOC,Northrop Grumman Corp.,hold
+CHTR,Charter Communications Inc.,hold
+MDLZ,Mondelez International Inc.,buy
+MO,Altria Group Inc.,sell
+DUK,Duke Energy Corp.,hold
+SO, Southern Co.,buy
+PLD,Prologis Inc.,sell
+ANTM,Anthem Inc.,hold
+SLB,Schlumberger NV,buy
+SBUX,Starbucks Corp.,sell
+GM, General Motors Co.,hold
+BAX,Baxter International Inc.,buy
+ADP,Automatic Data Processing Inc.,sell
+TMO,Thermo Fisher Scientific Inc.,hold
+SYK,Stryker Corp.,buy
+SPG,Simon Property Group Inc.,sell
+EL,Estée Lauder Companies Inc.,hold
+CCI,Crown Castle International Corp.,buy
+VRTX,Vertex Pharmaceuticals Inc.,sell
+FDX,FedEx Corp.,hold
+D, Dominion Energy Inc.,buy
+REGN,Regeneron Pharmaceuticals Inc.,sell
+HUM,Humana Inc.,hold
+PSA,Public Storage,buy
+NSC,Norfolk Southern Corp.,sell
+ETN,Eaton Corp. PLC,hold
+BDX,Becton Dickinson and Co.,buy
+MU,Micron Technology Inc.,sell
+AEP,American Electric Power Co. Inc.,hold
+ICE,Intercontinental Exchange Inc.,buy
+WBA,Walgreens Boots Alliance Inc.,sell
+EW,Edwards Lifesciences Corp.,hold
+AON,Aon PLC,buy
+GD,General Dynamics Corp.,sell
+APD,Air Products and Chemicals Inc.,hold
+DLR,Digital Realty Trust Inc.,buy
+KMB,Kimberly-Clark Corp.,sell
+FIS,Fidelity National Information Services Inc.,hold
+FISV,Fiserv Inc.,buy
+JCI,Johnson Controls International PLC,sell
+ROST,Ross Stores Inc.,hold
+LRCX,Lam Research Corp.,buy
+MCO,Moody's Corp.,sell
+ECL,Ecolab Inc.,hold
+ITW,Illinois Tool Works Inc.,buy
+ROP,Roper Technologies Inc.,sell
+AVB,AvalonBay Communities Inc.,hold
+TRV,Travelers Companies Inc.,buy
+KMI,Kinder Morgan Inc.,sell
+AFL,Aflac Inc.,hold
+STZ,Constellation Brands Inc.,buy
+HCA,HCA Healthcare Inc.,sell
+MAR,Marriott International Inc.,hold
+MNST,Monster Beverage Corp.,buy
+EXC,Exelon Corp.,sell
+ILMN,Illumina Inc.,hold
+PGR,Progressive Corp.,buy
+DHI,D.R. Horton Inc.,sell
+TEL,TE Connectivity Ltd.,hold
+BKR,Baker Hughes Co.,buy
+HPQ,HP Inc.,sell
+KEY,KeyCorp,hold
+PRU,Prudential Financial Inc.,buy
+ALL,Allstate Corp.,sell
+DOV,Dover Corp.,hold
+VLO,Valero Energy Corp.,buy
+YUM,Yum! Brands Inc.,sell
+SWK,Stanley Black & Decker Inc.,hold
+ATO,Atmos Energy Corp.,buy
+SYY,Sysco Corp.,sell
+WY,Weyerhaeuser Co.,hold
+HAL,Halliburton Co.,buy
+GLW,Corning Inc.,sell
+CFG,Citizens Financial Group Inc.,hold
+FTV,Fortive Corp.,buy
+CAH,Cardinal Health Inc.,sell
+FAST,Fastenal Co.,hold
+HPE,Hewlett Packard Enterprise Co.,buy
+GPN,Global Payments Inc.,sell
+KHC,Kraft Heinz Co.,hold
+O, Realty Income Corp.,buy
+FITB,Fifth Third Bancorp,sell
+IP, International Paper Co.,hold
+PXD,Pioneer Natural Resources Co.,buy
+MTD, Mettler-Toledo International Inc.,sell

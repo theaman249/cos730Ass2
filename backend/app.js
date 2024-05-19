@@ -18,24 +18,62 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
+app.get('/getUserData', (req,res) =>{
+  let getAllUserDataQuery = 'SELECT * FROM users';
+
+  client.query(getAllUserDataQuery, (err, result) =>{
+    if(err){
+      res.status(500).send({
+        message: "query fetch request error",
+        error: err
+      })
+    }
+    else{
+      let obj ={
+        id: result.rows[0].id,
+        fname: result.rows[0].fname,
+        lname: result.rows[0].lname,
+        email: result.rows[0].email,
+        company: result.rows[0].company,
+        portfolio: result.rows[0].portfolio,
+        role:result.rows[0].role
+      }
+
+      res.status(200).send({
+        data: obj
+      })
+    }
+
+   
+  })
+});
+
 
 app.post('/getETFData', (req, res) =>{
 
-  const {resultCount, alphabetical,ticker} = req.body;
+  const {resultCount, alphabetical,ticker,min_volume,risk} = req.body;
 
   let getAllETFsQuery = "";
+
+  console.log(req.body);
 
   if (ticker && ticker !== "") {
     getAllETFsQuery = `SELECT * from etf WHERE ticker = '${ticker}'`;
   }
   else if(alphabetical){ //user wants in alphabetical order
-    getAllETFsQuery = `SELECT * from etf ORDER BY name ASC LIMIT ${resultCount}`;
+    getAllETFsQuery = `SELECT * from etf WHERE volume >= ${min_volume} ORDER BY name ASC LIMIT ${resultCount}`;
+
+    if(risk != "all"){
+      getAllETFsQuery = `SELECT * from etf WHERE risk = '${risk}' AND volume >= ${min_volume} ORDER BY name ASC LIMIT ${resultCount}`;
+    }
   }
   else{
-    getAllETFsQuery = `SELECT * from etf LIMIT ${resultCount}`;    
+    getAllETFsQuery = `SELECT * from etf WHERE volume >= ${min_volume} LIMIT ${resultCount}`;   
+    
+    if(risk != 'all'){
+      getAllETFsQuery = `SELECT * from etf WHERE risk = '${risk}' AND volume >= ${min_volume} LIMIT ${resultCount}`;   
+    }
   }
-
-  console.log(getAllETFsQuery);
 
   client.query(getAllETFsQuery, (err,result) =>{
 
@@ -53,7 +91,11 @@ app.post('/getETFData', (req, res) =>{
         let obj = {
           ticker: result.rows[i].ticker,
           issuer: result.rows[i].issuer,
-          name: result.rows[i].name
+          name: result.rows[i].name,
+          risk: result.rows[i].risk,
+          volume: result.rows[i].volume,
+          ytd_return: result.rows[i].ytd_return
+
         }
 
         arr_return.push(obj);

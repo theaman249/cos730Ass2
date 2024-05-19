@@ -21,3 +21,9 @@
     display: inline-block;
     vertical-align: top; /* Adjust if needed */
 }
+
+.div-borders{
+    border-style: solid;
+    border-color: green;
+    padding: 8px;
+}
