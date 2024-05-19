@@ -84,9 +84,16 @@ const client = new Client({
         CREATE TABLE IF NOT EXISTS esg(
           ticker VARCHAR(10) PRIMARY KEY,
           name VARCHAR(500),
-          rating INT
+          rating INT,
+          agency VARCHAR(15)
         )
       `);
+
+       /**
+        * SELECT ticker, name, rating, agency
+          FROM esg
+          WHERE agency IN ('s&p', 'dow jones');
+        */
 
       console.log('Tables created successfully.');
     } catch (error) {

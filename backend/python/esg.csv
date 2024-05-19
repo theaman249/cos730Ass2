@@ -9,7 +9,7 @@ NOW,ServiceNow Inc,51
 FTV,Fortive Corp,89
 AME,AMETEK Inc,18
 PXD,Pioneer Natural Resources Co,78
-OXY,Occidental Petroleum Corp,2
+OXY,Occidental Petroleum Corp,41
 INFO,IHS Markit Ltd,7
 AAP,American Assets Trust Inc,91
 CNC,Centene Corp,40
@@ -55,7 +55,6 @@ AVGO,Broadcom Inc,71
 NWSA,News Corp,44
 NBLX,Noble Midstream Partners LP,36
 MRO,Marathon Oil Corp,77
-AME,AMETEK Inc,32
 BR,Broadridge Financial Solutions Inc,48
 CMS,CMS Energy Corp,94
 CAH,Cardinal Health Inc,9
@@ -63,7 +62,6 @@ MTB,M&T Bank Corp,69
 BBWI,Bath & Body Works Inc,75
 JWN,Nordstrom Inc,97
 ARE,Alexandria Real Estate Equities Inc,6
-HES,Hess Corp,29
 FIS,Fidelity National Information Services Inc,56
 LNC,Lincoln National Corp,12
 WRB,W. R. Berkley Corp,73
@@ -84,12 +82,10 @@ ZION,Zions Bancorp NA,62
 ESS,Essex Property Trust Inc,39
 RMD,ResMed Inc,59
 AWK,American Water Works Co Inc,88
-ARE,Alexandria Real Estate Equities Inc,24
 PEAK,Healthpeak Properties Inc,53
 HSIC,Henry Schein Inc,15
 O,O'Reilly Automotive Inc,95
 ATO,Atmos Energy Corp,66
-AME,AMETEK Inc,49
 GPC,Genuine Parts Co,80
 RE,Everest Re Group Ltd,13
 BKR,Baker Hughes Co,61
@@ -100,56 +96,37 @@ DRE,Duke Realty Corp,17
 EMN,Eastman Chemical Co,31
 AIZ,Assurant Inc,84
 LEG,Leggett & Platt Inc,5
-FFIV,F5 Networks Inc,97
 NOV,National Oilwell Varco Inc,22
-LNC,Lincoln National Corp,47
-FIS,Fidelity National Information Services Inc,65
 IFF,International Flavors & Fragrances Inc,30
-DRE,Duke Realty Corp,2
-MTD,Mettler-Toledo International Inc,59
-VFC,VF Corp,11
-HES,Hess Corp,89
-ARE,Alexandria Real Estate Equities Inc,48
 WDC,Western Digital Corp,69
 EXR,Extra Space Storage Inc,96
-WRB,W. R. Berkley Corp,38
-ORLY,O'Reilly Automotive Inc,17
-ZION,Zions Bancorp NA,80
-CTLT,Catalent Inc,57
 PLD,Prologis Inc,29
-VTR,Ventas Inc,71
-BKR,Baker Hughes Co,45
-JWN,Nordstrom Inc,78
-WRB,W. R. Berkley Corp,14
-FRT,Federal Realty Investment Trust,36
-AME,AMETEK Inc,86
-DRE,Duke Realty Corp,61
-FIS,Fidelity National Information Services Inc,40
-MTD,Mettler-Toledo International Inc,25
-O,O'Reilly Automotive Inc,94
-AIZ,Assurant Inc,22
-FFIV,F5 Networks Inc,53
-LNC,Lincoln National Corp,88
-NOV,National Oilwell Varco Inc,43
-VFC,VF Corp,67
-HES,Hess Corp,1
-ARE,Alexandria Real Estate Equities Inc,99
-EMN,Eastman Chemical Co,75
-VTR,Ventas Inc,35
-WDC,Western Digital Corp,11
-WRB,W. R. Berkley Corp,82
-PLD,Prologis Inc,58
-JWN,Nordstrom Inc,77
-CTLT,Catalent Inc,23
-ZION,Zions Bancorp NA,48
-EXR,Extra Space Storage Inc,67
 ORLY,O'Reilly Automotive Inc,31
-BKR,Baker Hughes Co,82
-AME,AMETEK Inc,16
-FIS,Fidelity National Information Services Inc,42
-MTD,Mettler-Toledo International Inc,72
-DRE,Duke Realty Corp,93
-LNC,Lincoln National Corp,19
-NOV,National Oilwell Varco Inc,70
-FFIV,F5 Networks Inc,33
-VFC,VF Corp,54
+AAPL,Apple,87
+MSFT,Microsoft,74
+V, Visa,81
+PG,Procter & Gamble,66
+JNJ,Johnson & Johnson,59
+UNH,UnitedHealth Group,76
+WMT,Walmart,95
+INTC,Intel,67
+HD,The Home Depot,73
+GS,Goldman Sachs,84
+VZ,Verizon Communications,62
+MRK,Merck & Co.,78
+KO,The Coca-Cola Company,70
+NKE,Nike,91
+IBM,IBM,55
+TRV,The Travelers Companies,64
+MMM,3M,53
+AXP,American Express,85
+MCD,McDonald's,80
+CAT,Caterpillar,60
+RTX,Raytheon Technologies,57
+WBA,Walgreens Boots Alliance,68
+DOW,Dow Inc.,75
+CVX,Chevron,82
+BA,Boeing,89
+CRM,Salesforce,63
+AMGN,Amgen,77
+HON,Honeywell International,71
