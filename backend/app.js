@@ -9,6 +9,7 @@ app.use(cors());
 app.use(bodyParser.json()); //for json data
 app.use(bodyParser.urlencoded({ extended: false })); //for URL encoded data
 
+module.exports = app;
 
 app.get('/', (req, res) => {
   res.send('COS730 Backend is running');
@@ -42,9 +43,7 @@ app.get('/getUserData', (req,res) =>{
       res.status(200).send({
         data: obj
       })
-    }
-
-   
+    }   
   })
 });
 
@@ -101,8 +100,8 @@ app.post('/getMomentumETFs', (req, res) =>{
 app.post('/getESGData', (req,res) =>{
   const {result_count,alphabetical,ticker,agencies,rating} = req.body
 
-  let min = 0; //default is a poor ratings
-  let max = 39;
+  let min = 0; //default
+  let max = 100;
 
   if(rating === "green"){
     min = 80;
@@ -115,6 +114,10 @@ app.post('/getESGData', (req,res) =>{
   else if(rating === "yellow"){
     min = 40;
     max = 59;
+  }
+  else if(rating === "poor"){
+    min = 0; //default is a poor ratings
+    max = 39;
   }
 
   let getESGDataQuery = "";
