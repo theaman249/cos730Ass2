@@ -25,7 +25,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-
+        clean: true  # This will clear the cache
+        
     - name: install dependencies
       run: npm install
       working-directory: ./backend
