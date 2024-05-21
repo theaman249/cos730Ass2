@@ -1,4 +1,5 @@
 const { describe } = require('node:test')
+const app = require('./app')
 
 describe('GET /getUserData', () => {
     it('unit test for the getUserData endPoint', () =>{
