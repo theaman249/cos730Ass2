@@ -33,3 +33,4 @@ jobs:
 
     - name: run unit and integration tests
       run: npm run test
+      working-directory: ./backend
