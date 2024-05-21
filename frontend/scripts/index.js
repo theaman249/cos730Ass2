@@ -5,6 +5,10 @@ function clearTextAreaOut(){
     id_textAreaOut.innerHTML = "";
 }
 
+function tester(){
+    return "Obama";
+}
+
 function getData(){
 
     const id_studentDetailsId = document.getElementById("studentDetails_id");
