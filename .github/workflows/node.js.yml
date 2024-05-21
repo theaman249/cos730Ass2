@@ -32,7 +32,7 @@ jobs:
       working-directory: ./backend
 
     - name: install the lockfile
-      run: yarn install --frozen-lockfile
+      run: npm install --frozen-lockfile
       working-directory: ./backend
 
     - name: run unit and integration tests
