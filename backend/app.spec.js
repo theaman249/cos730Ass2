@@ -210,5 +210,3 @@ describe('POS /getETFData', (req,res) =>{
         }
     })
 });
-
-
