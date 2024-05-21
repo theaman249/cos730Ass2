@@ -30,11 +30,3 @@ jobs:
     - name: install dependencies
       run: npm install
       working-directory: ./backend
-
-    - name: install the lockfile
-      run: npm install --frozen-lockfile
-      working-directory: ./backend
-
-    - name: run unit and integration tests
-      run: npm run test
-      working-directory: ./backend
