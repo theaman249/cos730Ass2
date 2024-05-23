@@ -206,10 +206,10 @@ describe('POST /getSentimentData', (req, res) =>{
         const response = getSentimentData();
 
         expect(response.data).toBeDefined();
-        response.data.forEach(esg => {
-            expect(esg).toHaveProperty('ticker');
-            expect(esg).toHaveProperty('name');
-            expect(esg).toHaveProperty('sentiment');
+        response.data.forEach(sent => {
+            expect(sent).toHaveProperty('ticker');
+            expect(sent).toHaveProperty('name');
+            expect(sent).toHaveProperty('sentiment');
         });
         expect(Array.isArray(response.data)).toBe(true);
     })
@@ -234,10 +234,10 @@ describe('POST /getSentimentData', (req, res) =>{
         const response = getSentimentData(['buy','sell']);
 
         expect(response.data).toBeDefined();
-        response.data.forEach(esg => {
-            expect(esg).toHaveProperty('ticker');
-            expect(esg).toHaveProperty('name');
-            expect(esg).toHaveProperty('sentiment');
+        response.data.forEach(sent => {
+            expect(sent).toHaveProperty('ticker');
+            expect(sent).toHaveProperty('name');
+            expect(sent).toHaveProperty('sentiment');
         });
         expect(Array.isArray(response.data)).toBe(true);
         expect(response.data[0].sentiment).toEqual('buy');
@@ -248,7 +248,7 @@ describe('POST /getSentimentData', (req, res) =>{
 describe('POS /getETFData', (req,res) =>{
 
     it('responds with all etf data', () =>{
-        const getSentimentData = jest.fn().mockImplementation(() =>({
+        const getETFData = jest.fn().mockImplementation(() =>({
             status: 200,
             data:[
             {
@@ -278,22 +278,22 @@ describe('POS /getETFData', (req,res) =>{
             ]
         }))
 
-        const response = getSentimentData();
+        const response = getETFData();
 
         expect(response.data).toBeDefined();
-        response.data.forEach(esg => {
-            expect(esg).toHaveProperty('ticker');
-            expect(esg).toHaveProperty('name');
-            expect(esg).toHaveProperty('issuer');
-            expect(esg).toHaveProperty('risk');
-            expect(esg).toHaveProperty('volume');
-            expect(esg).toHaveProperty('ytd_return');
+        response.data.forEach(etf => {
+            expect(etf).toHaveProperty('ticker');
+            expect(etf).toHaveProperty('name');
+            expect(etf).toHaveProperty('issuer');
+            expect(etf).toHaveProperty('risk');
+            expect(etf).toHaveProperty('volume');
+            expect(etf).toHaveProperty('ytd_return');
         });
         expect(Array.isArray(response.data)).toBe(true);
     })
 
     it('responds with all one etf data point with low risk', () =>{
-        const getSentimentData = jest.fn().mockImplementation((risk) =>({
+        const getETFData = jest.fn().mockImplementation((risk) =>({
             status: 200,
             data:[
             {
@@ -307,7 +307,7 @@ describe('POS /getETFData', (req,res) =>{
             ]
         }))
 
-        const response = getSentimentData('low');
+        const response = getETFData('low');
 
         expect(response.data).toBeDefined();
         response.data.forEach(etf => {
