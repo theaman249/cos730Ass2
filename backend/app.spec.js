@@ -323,6 +323,7 @@ describe('POS /getETFData', (req,res) =>{
         expect(Array.isArray(response.data)).toBe(true);
     })
 });
+//Running unit tests
 
 
 // Intergration Tests - Using SuperTest
