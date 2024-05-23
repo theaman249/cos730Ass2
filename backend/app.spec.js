@@ -245,7 +245,7 @@ describe('POST /getSentimentData', (req, res) =>{
     })
 });
 
-describe('POS /getETFData', (req,res) =>{
+describe('POST /getETFData', (req,res) =>{
 
     it('responds with all etf data', () =>{
         const getETFData = jest.fn().mockImplementation(() =>({
@@ -326,7 +326,7 @@ describe('POS /getETFData', (req,res) =>{
 //runnig tests 2
 
 
-// Intergration Tests - Using SuperTest
+// //Intergration Tests - Using SuperTest
 // const app = require('./app')
 // const request = require('supertest')
 
